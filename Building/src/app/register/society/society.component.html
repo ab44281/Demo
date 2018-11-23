@@ -1,0 +1,33 @@
+
+
+<div class="container">
+    <h3 style="text-align: center">Society Registration Form</h3>
+  <form #societyForm="ngForm" (ngSubmit)="GoToSubmit()">
+
+      {{societyForm.value | json}}
+
+    <!--First Input box for Name-->
+    <div class="form-group">
+      <div>Society Name</div>
+      <input type="text" class="form-control" name="societyName" [(ngModel)]="societyTS.societyName" required>
+    </div>
+    <!--<div>{{societyTS.societyName}}</div>-->
+
+    <!--Second Input box for Name-->
+    <div class="form-group">
+      <div>Address</div>
+      <input type="text" class="form-control" name="address"  [(ngModel)]="societyTS.address" required>
+    </div>
+    <!--<div>{{societyTS.address}}</div>-->
+
+    <div class="form-group">
+      <div>Pincode</div>
+      <input type="text" class="form-control" name="pincode" [(ngModel)]="societyTS.pincode" required>
+    </div>
+    <!--<div>{{societyTS.pincode}}</div>-->
+
+    <button type="submit" [disabled]='!societyForm.form.valid' class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary" (click)="societyForm.reset()">Reset</button>
+  </form>
+</div>
+

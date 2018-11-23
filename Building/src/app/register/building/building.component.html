@@ -1,0 +1,26 @@
+<div class="container">
+  <h3 style="text-align: center">Building Registration Form</h3>
+<form #buildingForm="ngForm" (ngSubmit)="GoToSubmit()">
+    
+    {{buildingForm.value | json}}
+ 
+  <!--First Input box for Name-->
+  <div class="form-group">
+    <div>Building Name</div>
+    <input type="text" class="form-control" name="buildingName" [(ngModel)]="buildingTS.buildingName" required>
+  </div>
+  <!--<div>{{societyTS.societyName}}</div>-->
+  
+  <!--Second Input box for Name-->
+  <div class="form-group">
+    <div>Society</div>
+    <input type="text" class="form-control" name="societyid"  [(ngModel)]="buildingTS.societyid" required>
+  </div>
+  <!--<div>{{societyTS.address}}</div>-->
+
+  <button type="submit" [disabled]='!buildingForm.valid' class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="clearText()">Reset</button>
+</form>
+</div>
+
+
